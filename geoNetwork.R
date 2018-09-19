@@ -30,10 +30,14 @@ tr_geo1 <- tr_geo1[ , -7]
 names(tr_geo1)
 names(te_geo1)
 te_geo1 <- te_geo1[ , -7]
+saveRDS(tr_geo1, "tr_geo1.rds")
+saveRDS(te_geo1, "te_geo1.rds")
 train_all <- bind_cols(train_all, tr_geo1)
 test_all <- bind_cols(test_all, te_geo1)
+names(train_all)
+names(test_all)
 saveRDS(train_all, "train_all.rds")
-saveRDS(test_all, "test_all")
+saveRDS(test_all, "test_all.rds")
 #**********************************************
 #remove socialEngagementType - no variation
 train <- train[ , -7]
